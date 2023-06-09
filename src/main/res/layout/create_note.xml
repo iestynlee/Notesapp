@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNoteActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="false"
+            app:layout_constraintEnd_toStartOf="@+id/confirmNote"
+            app:layout_constraintStart_toStartOf="@+id/confirmNote">
+
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:padding="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/confirmNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/inputNoteTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageBack"
+                app:srcCompat="@drawable/ic_baseline_check_box_24"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/inputNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:fontFamily="serif"
+                android:hint="@string/input_note_title"
+                android:inputType="text"
+                app:layout_constraintEnd_toStartOf="@+id/confirmNote"
+                app:layout_constraintStart_toStartOf="@+id/confirmNote"
+                app:layout_constraintTop_toBottomOf="@+id/imageBack" />
+
+            <EditText
+                android:id="@+id/inputNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autoLink="web|email"
+                android:ems="10"
+                android:background="@null"
+                android:importantForAutofill="no"
+                android:gravity="top"
+                android:hint="@string/input_note"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textMultiLine"
+                android:linksClickable="true"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textCursorDrawable="@null"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputNoteTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
